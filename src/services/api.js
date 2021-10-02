@@ -8,9 +8,14 @@ const callToApi = () => {
             const allData = response.results.map((character) => {
 
                 return {
+                    idDelBicho: character.id,
                     nombreDelBicho: character.name,
                     fotoDelBicho: character.image,
                     especieDelBicho: character.species,
+                    planetaDelBicho: character.origin.name,
+                    episodiosDelBicho: character.episode.length,
+                    estadoDelBicho: character.status,
+
 
 
                 }

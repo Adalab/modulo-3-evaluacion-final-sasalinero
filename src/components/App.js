@@ -3,7 +3,8 @@ import '../styles/App.scss';
 import callToApi from '../services/api';
 import { useState, useEffect } from 'react';
 import CharacterList from '../components/CharacterList';
-// import CharacterItem from '../components/CharacterItem';
+import { Route, Switch } from 'react-router-dom'
+import CharacterDetail from './CharacterDetail';
 
 
 
@@ -21,10 +22,26 @@ function App() {
   }, []);
 
   return (
-    <div  >
 
-      <CharacterList dataList={data} />
+    <div >
 
+      <Switch>
+
+        <Route path="/user/:id">
+          <section>
+            {/* <CharacterDetail characterDataDetail= /> */}
+          </section>
+
+        </Route>
+        <Route exact path="/"> <CharacterList dataList={data} />
+
+        </Route>
+
+        <Route>
+          <section>Oh! Página no encontrada</section>
+
+        </Route>
+      </Switch>
 
 
     </div>
