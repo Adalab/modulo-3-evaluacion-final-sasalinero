@@ -6,6 +6,7 @@ import { Route, Switch, useRouteMatch } from "react-router-dom";
 import CharacterDetail from "./CharacterDetail";
 import "../styles/layout/StyleApp.scss";
 import CharacterFiltered from "./CharacterFiltered";
+import { Link } from "react-router-dom";
 
 function App() {
   const [search, setSearch] = useState("");
@@ -47,9 +48,13 @@ function App() {
 
   return (
     <div className="allPage">
+      <header className="header"></header>
       <Switch>
         <Route path="/user/:id">
-          <section>
+          <section className="sectionPrincipal">
+            <Link className="linkDetail" to="/">
+              Volver
+            </Link>
             <CharacterDetail bicho={selectedCharacter} />
           </section>
         </Route>
@@ -58,7 +63,10 @@ function App() {
           <CharacterFiltered
             search={search}
             handleChangeSearch={handleChangeSearch}
+            selectSpecie={selectSpecie}
+            handleSpecie={handleSpecie}
           />
+
           <CharacterList dataList={filteredData} />
         </Route>
 
@@ -66,30 +74,6 @@ function App() {
           <section>Oh! Página no encontrada</section>
         </Route>
       </Switch>
-
-      <label className="filtroSelect" htmlFor="">
-        Filtra por especie
-      </label>
-      <select
-        className="filtroSelectBoxText"
-        name="filtroEspecie"
-        id="specie"
-        value={selectSpecie}
-        onChange={handleSpecie}
-      >
-        <option className="filtroSelectBox" value="All">
-          Todos
-        </option>
-        <option className="filtroSelectBox" value="Human">
-          Humano
-        </option>
-        <option className="filtroSelectBox" value="Alien">
-          Alien
-        </option>
-        <option className="filtroSelectBox" value="Alien">
-          No se sabe Alien
-        </option>
-      </select>
     </div>
   );
 }

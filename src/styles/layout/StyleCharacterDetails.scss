@@ -1,29 +1,45 @@
 .heart {
   font-size: 30px;
   color: red;
+  margin-left: 10px;
 }
 .dead {
   font-size: 30px;
-  color: black;
+  color: white;
+  margin-left: 30px;
 }
 .unknown {
   font-size: 30px;
-  color: black;
+  color: white;
+  margin-left: 10px;
 }
+// .styleCharacterDetail:hover {
+//   transform: rotateY(180deg);
+//   animation-play-state: paused;
+// }
 .styleCharacterDetail {
-  border-style: solid;
-  border-color: black;
-  background-color: grey;
+  grid-column: 2/3;
+  grid-row: 2/3;
+  background: transparent;
+  padding: 3px 10px;
+  border: white 5px dashed;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  // height: 400px;
+  width: 400px;
+  color: white;
+  font-size: 30px;
+  font-family: "Dancing Script", cursive;
 }
 .alien {
-  color: green;
-  font-size: 30px;
+  color: white;
+  font-size: 50px;
 }
 .human {
   display: flex;
   justify-content: center;
 
-  color: rgb(20, 74, 136);
+  color: white;
   font-size: 30px;
 }
 .filtroSelect {
@@ -45,4 +61,7 @@
 }
 .filtroSelectBox {
   font-size: 20px;
+}
+.nombreReal {
+  color: rgb(182, 9, 167);
 }
