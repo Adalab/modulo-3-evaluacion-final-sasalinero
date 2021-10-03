@@ -1,5 +1,9 @@
 .characterItem {
-  border-style: solid;
-  border-color: black;
-  background-color: grey;
+  background-color: rgba(236, 103, 14, 0.973);
+  // border: white 8px groove;
+  // border-width: 30px;
+  padding: 3px 10px;
+  border: black 5px dashed;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }

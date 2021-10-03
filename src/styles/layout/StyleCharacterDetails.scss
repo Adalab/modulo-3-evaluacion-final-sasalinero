@@ -10,3 +10,39 @@
   font-size: 30px;
   color: black;
 }
+.styleCharacterDetail {
+  border-style: solid;
+  border-color: black;
+  background-color: grey;
+}
+.alien {
+  color: green;
+  font-size: 30px;
+}
+.human {
+  display: flex;
+  justify-content: center;
+
+  color: rgb(20, 74, 136);
+  font-size: 30px;
+}
+.filtroSelect {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+.filtroSelectBoxText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 20px;
+
+  height: 30px;
+}
+.filtroSelectBox {
+  font-size: 20px;
+}

@@ -10,6 +10,7 @@ import CharacterFiltered from "./CharacterFiltered";
 function App() {
   const [search, setSearch] = useState("");
   const [data, setData] = useState([]);
+  const [selectSpecie, setSelectSpecie] = useState("All");
 
   const routeData = useRouteMatch("/user/:id");
   const contactId = routeData !== null ? routeData.params.id : "";
@@ -25,18 +26,27 @@ function App() {
     });
   }, []);
 
+  const handleSpecie = (ev) => {
+    return setSelectSpecie(ev.currentTarget.value);
+  };
+
   const handleChangeSearch = (ev) => {
     return setSearch(ev.currentTarget.value);
   };
 
-  const filteredData = data.filter((contact) =>
-    contact.nombreDelBicho
-      .toLocaleLowerCase()
-      .includes(search.toLocaleLowerCase())
-  );
+  const filteredData = data
+    .filter((contact) =>
+      contact.nombreDelBicho
+        .toLocaleLowerCase()
+        .includes(search.toLocaleLowerCase())
+    )
+    .filter(
+      (contact) =>
+        selectSpecie === "All" || contact.especieDelBicho === selectSpecie
+    );
 
   return (
-    <div>
+    <div className="allPage">
       <Switch>
         <Route path="/user/:id">
           <section>
@@ -56,6 +66,30 @@ function App() {
           <section>Oh! Página no encontrada</section>
         </Route>
       </Switch>
+
+      <label className="filtroSelect" htmlFor="">
+        Filtra por especie
+      </label>
+      <select
+        className="filtroSelectBoxText"
+        name="filtroEspecie"
+        id="specie"
+        value={selectSpecie}
+        onChange={handleSpecie}
+      >
+        <option className="filtroSelectBox" value="All">
+          Todos
+        </option>
+        <option className="filtroSelectBox" value="Human">
+          Humano
+        </option>
+        <option className="filtroSelectBox" value="Alien">
+          Alien
+        </option>
+        <option className="filtroSelectBox" value="Alien">
+          No se sabe Alien
+        </option>
+      </select>
     </div>
   );
 }

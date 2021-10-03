@@ -1,3 +1,25 @@
 .search {
-  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  font-size: 70px;
 }
+.input {
+  background-color: rgb(231, 223, 223);
+  font-size: 40px;
+  border: solid 10px;
+
+  border-color: black;
+}
+.allPage {
+  background-image: url("/imagenes/background.webp");
+  //background-image: url("/imagenes/Rick-Morty-Logo-1-1200x520.jpg");
+
+  background-position: center;
+  background-size: cover;
+  //background-color: green;
+}
+// .header {
+//   background-image: url("/src/imagenes/Rick-Morty-Logo-1-1200x520.jpg");
+//   background-position: center;
+//   background-size: cover;
+// }
