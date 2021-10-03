@@ -1,14 +1,24 @@
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  
-  faSkullCrossbones, faHeart,
+  faSkullCrossbones,
+  faHeart,
+  faQuestion,
 } from "@fortawesome/free-solid-svg-icons";
-import '../styles/layout/StyleCharacterDetails.scss';
+import "../styles/layout/StyleCharacterDetails.scss";
 
 const CharacterDetail = (props) => {
+  const estado = props.bicho.estadoDelBicho;
+
+  const renderIcon = () => {
+    if (estado === "Alive") {
+      return <FontAwesomeIcon className="heart" icon={faHeart} />;
+    } else if (estado === "Dead") {
+      return <FontAwesomeIcon className="dead" icon={faSkullCrossbones} />;
+    } else return <FontAwesomeIcon className="unknown" icon={faQuestion} />;
+  };
+
   return (
-    <div>
+    <div className="styleCharacterDetail">
       <img
         className="img"
         src={props.bicho.fotoDelBicho}
@@ -21,15 +31,10 @@ const CharacterDetail = (props) => {
       <br />
       <h2>Episodios:{props.bicho.episodiosDelBicho}</h2>
       <br />
-      <h2> <FontAwesomeIcon className ={ props.bicho.estadoDelBicho=== "Alive" ? "heart" : "dead"} icon={ props.bicho.estadoDelBicho=== "Dead" ? faSkullCrossbones : faHeart}
-          />{props.bicho.estadoDelBicho}</h2>
-
-
-
-
-         
-      
-    
+      <h2>
+        Estado: {props.bicho.estadoDelBicho}
+        {renderIcon()}
+      </h2>
     </div>
   );
 };
