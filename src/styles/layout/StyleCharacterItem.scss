@@ -1,12 +1,13 @@
 .characterItem {
   display: flex;
   align-items: center;
-
+  text-align: center;
+  justify-items: center;
   background: transparent;
   padding: 3px 10px;
   border: white 5px dashed;
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  height: 400px;
   width: 400px;
+  justify-content: center;
 }
