@@ -16,8 +16,7 @@
   margin-left: 10px;
 }
 .styleCharacterDetail {
-  grid-column: 2/3;
-  grid-row: 2/3;
+  grid-column: 1 / 4;
   background: transparent;
   padding: 3px 10px;
   border: white 5px dashed;
@@ -27,7 +26,7 @@
   font-size: 30px;
   font-family: "Dancing Script", cursive;
   line-height: 30px;
-  width: 400px;
+  width: 100%;
   justify-content: center;
 }
 .alien {
