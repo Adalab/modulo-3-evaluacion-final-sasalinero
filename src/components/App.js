@@ -71,7 +71,7 @@ function App() {
         </Route>
 
         <Route>
-          <section>Oh! Página no encontrada</section>
+          <section className="notFound">Oh! Página no encontrada</section>
         </Route>
       </Switch>
     </div>

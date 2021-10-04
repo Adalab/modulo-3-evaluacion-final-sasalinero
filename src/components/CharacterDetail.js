@@ -6,6 +6,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 // import "../styles/core/variables.scss";
 import "../styles/layout/StyleCharacterDetails.scss";
+import "../styles/layout/StyleCharacterItem.scss";
 
 const CharacterDetail = (props) => {
   const estado = props.bicho.estadoDelBicho;
